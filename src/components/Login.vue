@@ -1,15 +1,15 @@
 <template>
   <div id="app" class="ml-flexy ml-flexy--space-around ml-flexy--items-center app">
     <div class="login">
-      <div class="loginTitle">
-        <MIcon icon="checkIcon"  />
-        <span class="mt-heading mt-heading--m mt-heading--center">Login</span>
+      <div class="loginTitle ml-flexy ml-flexy--items-center">
+        <MIcon class="" :icon="userIcon"  />
+        <span class="mt-heading mt-heading--m mt-heading--center ">Login</span>
       </div>
       <div class="loginBox">
         <MField
           label="Email"
           id="idEmail"
-          errorMessage="Oups error occured"
+          :errorMessage="emailErrorMessage"
           :required=true
           errorId="errorEmail"
           :isInvalid="isEmailInvalid"
@@ -23,29 +23,35 @@
             :pattern="pattern"
             :isInvalid="isEmailInvalid"
             :isValid="isValid"
-            v-on:blur="onBlur()"
+            v-on:blur="onBlur"
           />
         </MField>
         <MField
           label="Password"
-          id="password"
-          errorMessage="Oups error occured"
+          id="idPwd"
+          :errorMessage="pwdErrorMessage"
           :required=true
-          errorId="errorPassword"
+          errorId="errorPwd"
+          :isInvalid="isPwdInvalid"
+          class="mu-mt-100"
         >
           <MTextInput
             required
             type="password"
+            :id="idPwd"
             placeholder="Enter your password"
-            @blur="onBlur()"
+            :isInvalid="isPwdInvalid"
+            :isValid="isPwdValid"
+            v-on:blur="validPassword"
           />
         </MField> 
-        <MButton
-          label="Sign in"
-          theme="primary"
-          v-on:click="greet('toto')"
-          
-        />  
+        <div class="ml-flexy ml-flexy--space-around ml-flexy--items-center mu-mt-250" >
+            <MButton
+            label="Sign in"
+            theme="primary"
+            v-on:click="greet('toto')"
+            />
+        </div>
       </div>
     </div>
   </div>
@@ -56,6 +62,7 @@ import MField from '@mozaic-ds/mozaic-vue/src/components/field/MField';
 import MTextInput from '@mozaic-ds/mozaic-vue/src/components/textinput/MTextInput';
 import MIcon from '@mozaic-ds/mozaic-vue/src/components/icon/MIcon';
 import MButton from '@mozaic-ds/mozaic-vue/src/components/button/MButton';
+import userIcon from '@mozaic-ds/icons/svg/User_Account_Profile--View_48px.svg';
 
 export default {
   name: 'app',
@@ -65,14 +72,23 @@ export default {
     MIcon,
     MButton,
   },
-  data() {
+  data: function (){
     return {
+        userIcon,
       idEmail: "idEmail",
+      idPwd: "idPwd",
       isValid: false,
-      isEmailInvalid: true,
-      pattern: "b[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}\b",
-      myInputValue: ""
-    };
+      isEmailInvalid: false,
+      isPwdValid: false,
+      isPwdInvalid: false,
+      pattern: "",
+      myInputValue: "",
+      emailErrorMessage: "",
+      emails: ['momo@gmail.com', 'toto@gmail.com', 'titi@gmail.com'],
+      isPasswordInvalid: false,
+      password: "12345",
+      pwdErrorMessage: ""
+    }
   },
   methods: {
     greet: function (event) {
@@ -82,16 +98,27 @@ export default {
       }
     },
     onBlur(value) {
-      alert('toto')
-      const regex = RegExp(this.pattern);
-      this.myInputValue = value;
-      if (regex.test(this.myInputValue)) {
-        this.isValid = true;
-        this.isInvalid = false;
-      } else {
-        this.isInvalid = true;
-        this.isValid = false;
-      }
+        if(this.emails.includes(value)){
+            this.isEmailInvalid = false
+            this.isvalid = true
+        } 
+        else{
+            this.isEmailInvalid = true
+            this.isvalid = false
+            this.emailErrorMessage = 'Email inconnu'
+        }
+    },
+    validPassword(value) {
+        alert(this.password === value)
+        if(this.password === value){
+            this.isPwdInvalid = false
+            this.isPwdvalid = true
+        } 
+        else{
+            this.isPwdInvalid = true
+            this.isPwdvalid = false
+            this.pwdErrorMessage = 'Mauvais mot de passe'
+        }
     }
   }
 }
@@ -102,6 +129,8 @@ export default {
 @import 'layouts/_l.container';
 @import 'layouts/_l.flexy';
 @import 'typography/_t.headings';
+@import 'utilities/_u.margin.scss';
+@import 'utilities/_u.padding.scss';
 </style>
 
 <style lang="scss">

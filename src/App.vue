@@ -10,9 +10,6 @@ export default {
   components: {
     Login
   },
-  data() {
-
-  },
   methods: {
   }
 }
