@@ -1,0 +1,8 @@
+// _base.scss
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+#app {
+  font: 100% $font-stack;
+  background-color: #999999 !important;
+}
