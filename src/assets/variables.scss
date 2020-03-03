@@ -1,8 +1,9 @@
 // _base.scss
-$font-stack:    Helvetica, sans-serif;
+$font-stack: LeroyMerlinSans-Regular, sans-serif;
 $primary-color: #333;
 
-#app {
-  font: 100% $font-stack;
+html, body {
+  font: 100%;
+  font-family: $font-stack;
   background-color: #999999 !important;
 }

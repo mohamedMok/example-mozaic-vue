@@ -1,14 +1,19 @@
 <template>
-  <Login />
+  <div id="app">
+      <Navigation/>
+      <router-view/>
+      
+  </div>    
 </template>
 
 <script>
-import Login from './components/Login';
+import Navigation from './components/Navigation'
+
 
 export default {
   name: 'app',
   components: {
-    Login
+    Navigation
   },
   methods: {
   }
@@ -30,7 +35,7 @@ html, body {
   padding: 0;
 }
 body {
-  background-color: #999999 !important;
+  background-color: #E2DBD9 !important;
 }
 
 .loginBox {

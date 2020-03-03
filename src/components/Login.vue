@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="ml-flexy ml-flexy--space-around ml-flexy--items-center app">
+  <div id="login" class="ml-flexy ml-flexy--space-around ml-flexy--items-center">
     <div class="login">
       <div class="loginTitle ml-flexy ml-flexy--items-center">
         <MIcon class="" :icon="userIcon"  />
@@ -131,6 +131,9 @@ export default {
 @import 'typography/_t.headings';
 @import 'utilities/_u.margin.scss';
 @import 'utilities/_u.padding.scss';
+.app {
+  min-height: 100vh;
+}
 </style>
 
 <style lang="scss">
@@ -141,7 +144,7 @@ html, body {
   padding: 0;
 }
 body {
-  background-color: #999999 !important;
+  background-color: #eeeef0 !important;
 }
 
 .loginBox {
@@ -150,7 +153,5 @@ body {
   background-color: white;
   padding: 50px;
 }
-.app {
-  min-height: 100vh;
-}
+
 </style>
