@@ -97,36 +97,6 @@ export default {
 </style>
 
 <style lang="scss" scoped> 
-@import './src/assets/variables.scss';
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #E2DBD9 !important;
-  font-family: LeroyMerlinSans-Regular, sans-serif !important;
-}
-
-.loginBox {
-  height: 300px;
-  width: 500px;
-  background-color: white;
-  padding: 50px;
-}
-.app {
-  min-height: 100vh;
-  background-color: white;
-}
-.thumbnails {
-  position: absolute;
-  max-height: 100%;
-  max-width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
 .first{
   border: 1px solid #554f52;
   border-radius: 4px;
@@ -136,15 +106,10 @@ body {
   border: 1px solid #eeeef0;
 }
 
-
 .caroussel{
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-.exemple {
-  max-width: 80rem;
 }
 </style>

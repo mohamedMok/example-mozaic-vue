@@ -1,9 +1,11 @@
 // _base.scss
-$font-stack: LeroyMerlinSans-Regular, sans-serif;
+$font-stack: "LeroyMerlin", sans-serif;
 $primary-color: #333;
 
-html, body {
-  font: 100%;
-  font-family: $font-stack;
-  background-color: #999999 !important;
-}
+$local-config: (
+  font-path: "~@mozaic-ds/web-fonts"
+);
+
+@import "settings-tools/_all-settings";
+
+@include import-font-families();

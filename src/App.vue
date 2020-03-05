@@ -1,50 +1,57 @@
 <template>
   <div id="app">
-      <Navigation/>
-      <router-view/>
-      
-  </div>    
+    <Navigation />
+
+    <div class="ml-container">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
-import Navigation from './components/Navigation'
-
+import Navigation from "./components/Navigation";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Navigation
   },
-  methods: {
-  }
-}
+  methods: {}
+};
 </script>
 
-<style lang="scss" scoped>
-@import "settings-tools/_all-settings";
-@import 'layouts/_l.container';
-@import 'layouts/_l.flexy';
-@import 'typography/_t.headings';
-</style>
-
 <style lang="scss">
-@import './src/assets/variables.scss';
+@import "./assets/variables.scss";
 
-html, body {
+* {
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  font: 100%;
   margin: 0;
   padding: 0;
 }
+
+$font-stack: "LeroyMerlin", sans-serif;
+
 body {
-  background-color: #E2DBD9 !important;
+  background-color: #e2dbd9;
+  font-family: $font-stack;
 }
 
-.loginBox {
-  height: 300px;
-  width: 500px;
-  background-color: white;
-  padding: 50px;
-}
 .app {
   min-height: 100vh;
 }
+</style>
+
+<style lang="scss" scoped>
+@import "settings-tools/_all-settings";
+@import "layouts/_l.container";
+@import "layouts/_l.flexy";
+@import "typography/_t.headings";
 </style>

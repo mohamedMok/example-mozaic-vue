@@ -139,19 +139,10 @@ export default {
 <style lang="scss">
 @import './src/assets/variables.scss';
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #eeeef0 !important;
-}
-
 .loginBox {
   height: 300px;
   width: 500px;
   background-color: white;
   padding: 50px;
 }
-
 </style>

@@ -26,6 +26,11 @@ export default {
           text: 'Product Page',
           page:'/Product'
         },
+        {
+          id: 2,
+          text: 'Reviews Page',
+          page:'/Reviews'
+        },
       ]
     }
   }
