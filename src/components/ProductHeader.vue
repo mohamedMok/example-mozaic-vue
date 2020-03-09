@@ -1,9 +1,11 @@
 <template>
     <div class="mu-pt-200 mu-pr-200 mu-pl-200">
         <span class="mt-heading mt-heading--s mu-pb-100">{{product.name}}</span>
-        <span class="mt-body-s mt-body-s--line-height-m example__font-color-lightest mu-pr-100">{{product.ref}} </span>|
-        <MStarsResult :score=4 size="s" class="stars mu-pl-100 mu-pr-100" />|
-        <span class="mt-body-s .mt-body-s--line-height-m example__font-color-lightest mu-pl-100 mu-pr-100"> 1 question/réponse</span>|
+        <div class="sub-header">
+            <span class="mt-body-s mt-body-s--line-height-m example__font-color-lightest mu-pr-100">{{product.ref}} </span>|
+            <MStarsResult :score=4 size="s" class="stars mu-pl-100 mu-pr-100" />|
+            <span class="mt-body-s .mt-body-s--line-height-m example__font-color-lightest mu-pl-100 mu-pr-100"> 1 question/réponse</span>|
+        </div>
     </div>
 </template>
 
@@ -33,6 +35,11 @@ export default {
 
 .stars {
   display: inline-block !important;
+}
+
+.sub-header {
+    display:inline-flex;
+    align-items: center;
 }
 
 body,

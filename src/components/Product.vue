@@ -1,5 +1,7 @@
 <template>
   <div id="product" class="app">
+    <div class="fake-header" >
+    </div>
       <div class="ml-flexy ml-flexy__col ml-flexy__col--initial mu-pb-200" >
           <ProductHeader />
       </div>
@@ -20,6 +22,22 @@
           </div>
         </div>
       </div>
+      <div class="fake-sub" >
+    </div>
+    <div class="fake-title" >
+    </div>
+    <div class="ml-flexy">
+      <div class="ml-flexy__col ml-flexy__col--1of2">
+        <div class="fake-cat"></div>
+        <div class="fake-cat"></div>
+        <div class="fake-cat"></div>
+      </div>
+      <div class="ml-flexy__col ml-flexy__col--1of2">
+        <div class="fake-cat"></div>
+        <div class="fake-cat"></div>
+        <div class="fake-cat"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -113,7 +131,35 @@ export default {
   width: 50%;
 }
 .app {
-  margin-left:15% !important;
-  margin-right:15% !important;
+  margin-left:10% !important;
+  margin-right:10% !important;
+  border: 3px solid rgb(211, 210, 214);;
+  margin-top: 20px;
+}
+
+.fake-header {
+  height: 80px;
+  margin: 10px;
+  background-color: rgb(211, 210, 214);;
+}
+
+.fake-sub {
+  height: 40px;
+  margin: 10px;
+  background-color: rgb(211, 210, 214);;
+}
+
+.fake-title {
+  height: 40px;
+  margin-top: 30px;
+  margin-right: 30%;
+  margin-left: 30%;
+  background-color: rgb(211, 210, 214);;
+}
+
+.fake-cat {
+  height: 20px;
+  margin: 30px;
+  background-color: rgb(211, 210, 214);
 }
 </style>

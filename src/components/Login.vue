@@ -2,7 +2,7 @@
   <div id="login" class="ml-flexy ml-flexy--space-around ml-flexy--items-center">
     <div class="login">
       <div class="loginTitle ml-flexy ml-flexy--items-center">
-        <MIcon class="" :icon="userIcon"  />
+        <MIcon class="logo" :icon="userIcon"  />
         <span class="mt-heading mt-heading--m mt-heading--center ">Login</span>
       </div>
       <div class="login-box">
@@ -134,6 +134,10 @@ export default {
 
 .app {
   min-height: 100vh;
+}
+
+.logo {
+  display: inline-flex;
 }
 </style>
 

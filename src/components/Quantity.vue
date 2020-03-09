@@ -10,7 +10,7 @@
       v-on:click="quantity--"
       />
       <div class="stars"> 
-          <MInput v-model="quantity" class="quantity-box" />
+          <input v-model="quantity" class="quantity-box" />
       </div>
       <MButton
       label=""
@@ -31,7 +31,6 @@
 
 <script>
 import MButton from '@mozaic-ds/mozaic-vue/src/components/button/MButton';
-import MInput from '@mozaic-ds/mozaic-vue/src/components/textinput/MTextInput';
 import addicon from '@mozaic-ds/icons/svg/Navigation_Control_More_48px.svg';
 import minusicon from '@mozaic-ds/icons/svg/Navigation_Control_Less_48px.svg';
 import addcart from '@mozaic-ds/icons/svg/Product_Basket_Add_48px.svg';
@@ -39,7 +38,6 @@ export default {
     name: 'app',
     components: {
         MButton,
-        MInput
     },
     data: function (){
     return {
@@ -76,16 +74,18 @@ export default {
 }
 
 .quantity-box {
-  width: 60px;
+  height: 1.5rem;
+  line-height: 2;
+  width: 30px;
   border-left: none !important;
   border-right: none !important;
   border-radius: 0 !important;
   border-top: 1px solid #78be20 !important;
   border-bottom: 1px solid #78be20 !important;
-}
-
-.add-cart {
-  max-width: 900px !important;
+  font-family: LeroyMerlinSans-Regular, sans-serif !important;
+  font-size: 16px;
+  padding: calc(0.75rem - 0.125em - 3px) 0.75rem calc(0.75rem + 0.125em - 1px);
+  text-align: center;
 }
 
 body,

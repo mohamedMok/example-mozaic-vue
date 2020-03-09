@@ -1,10 +1,10 @@
 <template>
     <div class="mu-pr-200 mu-pl-200 ">
         <span class="mt-heading mt-heading--s price">{{product.price}} €</span>
-        <span class="mt-body-s mt-body-s--line-height-m example__font-color-lightest mu-pr-100">{{product.ecoPart}} </span>
+        <span class="example__font-color-lightest mu-pr-100">{{product.ecoPart}} </span>
         <br />
         <br />
-        <span class="mt-body-s mt-body-s--line-height-m retrait">{{product.retrait}}</span><span> à Saint Denis (St Denis-la-Plaine)</span>
+        <span class="mt-body-s mt-body-s--line-height-m retrait">{{product.retrait}}</span><span class="mt-body-s mt-body-s--line-height-m"> à Saint Denis (St Denis-la-Plaine)</span>
         <br />
         <br />
         <br />
@@ -13,9 +13,10 @@
         <br />
         <div class="availability">
             <span>Dans votre magasin de Saint Denis (St Denis-la-Plaine)</span>
-            <div >
+            <br/>
+            <div class="align">
                 <MIcon class="logo" size="s" color="primary-01-500" :icon="stock"  />
-                <span class="stock" >7 unités en stock</span>
+                <span class="stock">7 unités en stock</span>
             </div>
         </div>
     </div>
@@ -54,6 +55,7 @@ export default {
 <style lang="scss">
 .example__font-color-lightest {
   color: #6f676c;
+  font-size: 12px;
 }
 
 .price {
@@ -66,13 +68,17 @@ export default {
 }
 
 .logo {
-  display: inline-block;
+  display: inline-flex;
   margin-right: 5px;
   padding-top: 5;
 }
 
 .stock {
   color: #78be20;
+}
+
+.align {
+  display: inline-flex;
 }
 
 .availability {
