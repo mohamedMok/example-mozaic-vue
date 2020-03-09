@@ -21,7 +21,7 @@
       <h2 class="review-card__title">{{ review.title }}</h2>
       <p class="review-card__date">Avis déposé le {{ review.date }}</p>
       <div class="review-card__desc mt-body-m">
-        <p>{{ review.desc }}</p>
+        <p v-html="review.desc"></p>
       </div>
 
       <div class="review-card__footer">
@@ -81,7 +81,7 @@ export default {
     text-align: center;
 
     &-name {
-      color: $color-font-primary-01; // TODO: voir quelles variables utiliser pour les couleurs
+      color: $color-font-primary-01;
       text-transform: uppercase;
       font-weight: map-get($font-weights, "semi-bold");
     }
