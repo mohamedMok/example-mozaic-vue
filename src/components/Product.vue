@@ -131,8 +131,6 @@ export default {
   width: 50%;
 }
 .app {
-  margin-left:10% !important;
-  margin-right:10% !important;
   border: 3px solid rgb(211, 210, 214);;
   margin-top: 20px;
 }
