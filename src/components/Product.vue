@@ -112,4 +112,8 @@ export default {
   margin-right: auto;
   width: 50%;
 }
+.app {
+  margin-left:15% !important;
+  margin-right:15% !important;
+}
 </style>

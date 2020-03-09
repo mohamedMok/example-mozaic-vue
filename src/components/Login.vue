@@ -5,7 +5,7 @@
         <MIcon class="" :icon="userIcon"  />
         <span class="mt-heading mt-heading--m mt-heading--center ">Login</span>
       </div>
-      <div class="loginBox">
+      <div class="login-box">
         <MField
           label="Email"
           id="idEmail"
@@ -131,6 +131,7 @@ export default {
 @import 'typography/_t.headings';
 @import 'utilities/_u.margin.scss';
 @import 'utilities/_u.padding.scss';
+
 .app {
   min-height: 100vh;
 }
@@ -139,10 +140,10 @@ export default {
 <style lang="scss">
 @import './src/assets/variables.scss';
 
-.loginBox {
+.login-box {
   height: 300px;
   width: 500px;
-  background-color: white;
+  background-color: rgb(228, 228, 228);
   padding: 50px;
 }
 </style>

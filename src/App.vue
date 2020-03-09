@@ -40,7 +40,7 @@ body {
 $font-stack: "LeroyMerlin", sans-serif;
 
 body {
-  background-color: #e2dbd9;
+  background-color: white;
   font-family: $font-stack;
 }
 

@@ -116,11 +116,13 @@ export default {
 
   &__title {
     @include set-font-scale('06');
+
     margin: $mu100 auto 0;
   }
 
   &__date {
     @include set-font-scale('04');
+
     color: $color-font-light;
     margin: 0 auto;
   }

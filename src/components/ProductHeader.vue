@@ -30,13 +30,16 @@ export default {
 .example__font-color-lightest {
   color: #6f676c;
 }
-.stars 
-{
-    display: inline-block !important;
+
+.stars {
+  display: inline-block !important;
 }
-body, span {
+
+body,
+span {
   font-family: LeroyMerlinSans-Regular, sans-serif !important;
 }
+
 @import "settings-tools/_all-settings";
 @import 'layouts/_l.container';
 @import 'layouts/_l.flexy';
