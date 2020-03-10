@@ -15,13 +15,13 @@
       <MButton
       label=""
       theme="bordered"
-      class="mc-button--square add-button"
+      class="mc-button--square add-button mu-mr-100"
       :left-icon="addicon"
       v-on:click="quantity++"
       />
     </div>
     <MButton
-    class="mu-ml-100 add-cart"
+    class="add-cart"
     label="Ajouter au panier"
     theme="primary"
     :left-icon="addcart"

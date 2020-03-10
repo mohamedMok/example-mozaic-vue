@@ -2,9 +2,9 @@
     <div class="mu-pt-200 mu-pr-200 mu-pl-200">
         <span class="mt-heading mt-heading--s mu-pb-100">{{product.name}}</span>
         <div class="sub-header">
-            <span class="mt-body-s mt-body-s--line-height-m example__font-color-lightest mu-pr-100">{{product.ref}} </span>|
-            <MStarsResult :score=4 size="s" class="stars mu-pl-100 mu-pr-100" />|
-            <span class="mt-body-s .mt-body-s--line-height-m example__font-color-lightest mu-pl-100 mu-pr-100"> 1 question/réponse</span>|
+            <span class="mt-body-s mt-body-s--line-height-m example__font-color-lightest mu-pr-100">{{product.ref}} </span>
+            <MStarsResult :score=4 size="s" class="stars" />
+            <span class="mt-body-s .mt-body-s--line-height-m example__font-color-lightest question"> 1 question/réponse</span>
         </div>
     </div>
 </template>
@@ -34,13 +34,36 @@ export default {
 }
 
 .stars {
-  display: inline-block !important;
+  display: block !important;
 }
 
 .sub-header {
-    display:inline-flex;
-    align-items: center;
+  display: block;
+  align-items: center;
 }
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) {
+  .sub-header {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .stars {
+    display: inline-block !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+
+  .question {
+    display: inline-block !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
 
 body,
 span {

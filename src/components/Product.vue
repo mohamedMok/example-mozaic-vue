@@ -2,12 +2,12 @@
   <div id="product" class="app">
     <div class="fake-header" >
     </div>
-      <div class="ml-flexy ml-flexy__col ml-flexy__col--initial mu-pb-200" >
+      <div class="title ml-flexy ml-flexy__col ml-flexy__col--initial mu-pb-200" >
           <ProductHeader />
       </div>
       <div class="ml-container example">
-        <div class="ml-flexy ml-flexy--gutter ">
-          <div class="ml-flexy__col--1of6 ">
+        <div class="ml-flexy ml-flexy--gutter main">
+          <div class="ml-flexy__col--1of6 thumb">
             <img src="https://m2.lmcdn.fr/media/1/5e228f8e475ea7422a9a4b84/.png?width=60&format=jpg" class="first mu-pr-125 mu-pl-125" />
           </div>
           <div class="ml-flexy__col middle">
@@ -115,9 +115,12 @@ export default {
 </style>
 
 <style lang="scss" scoped> 
+.main{
+    flex-direction: column;
+  }
+
 .first{
-  border: 1px solid #554f52;
-  border-radius: 4px;
+  display: none;
 }
 
 .middle{
@@ -131,20 +134,20 @@ export default {
   width: 50%;
 }
 .app {
-  border: 3px solid rgb(211, 210, 214);;
+  border: 3px solid rgb(211, 210, 214);
   margin-top: 20px;
 }
 
 .fake-header {
   height: 80px;
   margin: 10px;
-  background-color: rgb(211, 210, 214);;
+  background-color: rgb(211, 210, 214);
 }
 
 .fake-sub {
   height: 40px;
   margin: 10px;
-  background-color: rgb(211, 210, 214);;
+  background-color: rgb(211, 210, 214);
 }
 
 .fake-title {
@@ -152,7 +155,7 @@ export default {
   margin-top: 30px;
   margin-right: 30%;
   margin-left: 30%;
-  background-color: rgb(211, 210, 214);;
+  background-color: rgb(211, 210, 214);
 }
 
 .fake-cat {
@@ -160,4 +163,19 @@ export default {
   margin: 30px;
   background-color: rgb(211, 210, 214);
 }
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) {
+  .main{
+    flex-direction: row;
+  }
+
+.first{
+  display: inline-flex;
+  border: 1px solid #554f52;
+  border-radius: 4px;
+}
+
+}
+
 </style>

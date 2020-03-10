@@ -1,5 +1,5 @@
 <template>
-    <div class="mu-pr-200 mu-pl-200 ">
+    <div class="info">
         <span class="mt-heading mt-heading--s price">{{product.price}} €</span>
         <span class="example__font-color-lightest mu-pr-100">{{product.ecoPart}} </span>
         <br />
@@ -86,6 +86,26 @@ export default {
   border: 1px solid #d3d2d6;
   padding: 0.75rem 1rem;
   margin-top: 1.5rem;
+}
+
+
+.info {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) {
+  .info {
+    padding-right: 32;
+    padding-left: 32;
+  }
+
+  .first {
+    display: inline-flex;
+    border: 1px solid #554f52;
+    border-radius: 4px;
+  }
 }
 
 @import "settings-tools/_all-settings";

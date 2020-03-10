@@ -146,8 +146,21 @@ export default {
 
 .login-box {
   height: 300px;
-  width: 500px;
   background-color: rgb(228, 228, 228);
   padding: 50px;
+}
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) {
+  .login-box {
+    width: 500px;
+  }
+}
+
+/* DESKTOP VERSION */
+@media only screen and (min-width: 980px) {
+  .login-box {
+    width: 500px;
+  }
 }
 </style>
