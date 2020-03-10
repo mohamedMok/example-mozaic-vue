@@ -3,8 +3,7 @@
     <h1 class="mt-heading mt-heading--s mt-heading--underline mt-heading--center">Avis</h1>
     <p class="mt-body-m">Pour tout commentaire relatif au service (magasin, SAV, livraison), merci de le déposer dans notre rubrique contactez-nous.</p>
 
-    <!-- Opinions Recap -->
-    <ReviewsRecap />
+    <ReviewsRecap :reviewsAverage="reviewsAverage" />
 
     <p>Afficher par <strong>{{ reviewsNbFilter }} avis</strong></p>
     <div class="reviews-list">
@@ -43,6 +42,33 @@ export default {
           date: "05 octobre 2018",
           desc: "Support mal conçu."
         }
+      ],
+      reviewsAverage: [
+        {
+          score: 5,
+          range: 60,
+          number: 70
+        },
+        {
+          score: 4,
+          range: 50,
+          number: 32
+        },
+        {
+          score: 3,
+          range: 30,
+          number: 4
+        },
+        {
+          score: 2,
+          range: 10,
+          number: 2
+        },
+        {
+          score: 1,
+          range: 0,
+          number: 0
+        },
       ]
     };
   }
