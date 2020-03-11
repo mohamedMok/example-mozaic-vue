@@ -3,79 +3,99 @@
     <div class="reviews-recap__main">
       <p class="reviews-recap__average-score"><span>3,0</span>/5</p>
       <div class="reviews-recap__average-global">
-        <MStarsResult :score=3.0 size="m" />
+        <MStarsResult :score="3.0" size="m" />
         <strong>(2)</strong>
       </div>
 
       <ul class="reviews-recap__list">
-        <li class="reviews-recap__list-item" v-for="(average, index) in reviewsAverage" :key="index">
-          <MStarsResult :score=average.score size="s" />
-          <span :class="`reviews-recap__range reviews-recap__range--${average.range}`"></span>
+        <li
+          class="reviews-recap__list-item"
+          v-for="(average, index) in reviewsAverage"
+          :key="index"
+        >
+          <MStarsResult :score="average.score" size="s" />
+          <span
+            :class="
+              `reviews-recap__range reviews-recap__range--${average.range}`
+            "
+          ></span>
           <span class="reviews-recap__score">{{ average.number }}</span>
         </li>
       </ul>
-
     </div>
     <div class="reviews-recap__aside">
       <div class="reviews-recap__aside-wrapper">
         <m-button label="Donner votre avis" />
-        <p class="reviews-recap__recommandation"><strong>50%</strong> des clients recommandent ce produit</p>
-        <p class="reviews-recap__mention">Tous les avis sont soumis à modération <m-icon :icon="icon" /></p>
+        <p class="reviews-recap__recommandation">
+          <strong>50%</strong> des clients recommandent ce produit
+        </p>
+        <p class="reviews-recap__mention">
+          Tous les avis sont soumis à modération <m-icon :icon="icon" />
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import MButton from "@mozaic-ds/mozaic-vue/src/components/button/MButton";
-import MStarsResult from "@mozaic-ds/mozaic-vue/src/components/ratingstars/MStarsResult";
-import MIcon from "@mozaic-ds/mozaic-vue/src/components/icon/MIcon";
+import MButton from '@mozaic-ds/mozaic-vue/src/components/button/MButton';
+import MStarsResult from '@mozaic-ds/mozaic-vue/src/components/ratingstars/MStarsResult';
+import MIcon from '@mozaic-ds/mozaic-vue/src/components/icon/MIcon';
 import IconInfo from '@mozaic-ds/icons/svg/Navigation_Notification_Information_24px.svg';
 
 export default {
-  name: "ReviewRecap",
+  name: 'ReviewRecap',
 
   components: {
     MButton,
     MStarsResult,
-    MIcon
+    MIcon,
   },
 
   props: {
     reviewsAverage: {
       type: Object,
-      default: null
+      default: null,
     },
     icon: {
       type: String,
-      default: IconInfo
+      default: IconInfo,
     },
   },
 
-  data () {
+  data() {
     return {
       id: null,
-    }
+    };
   },
 
-  created () {
+  created() {
     this.id = this._uid;
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "settings-tools/_all-settings";
-@import "components/_c.links";
-@import "typography/_t.bodys";
+@import 'settings-tools/_all-settings';
+@import 'components/_c.links';
+@import 'typography/_t.bodys';
 
 .reviews-recap {
   background: $color-grey-000;
-  display: flex;
   padding: $mu200;
-  
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+
   &__main {
-    border-right: 1px solid $color-grey-200;
+    @media (max-width: 991px) {
+      border-bottom: 1px solid $color-grey-200;
+      padding-bottom: $mu200;
+    }
+    @media (min-width: 992px) {
+      border-right: 1px solid $color-grey-200;
+    }
   }
 
   &__average-score {
@@ -123,7 +143,7 @@ export default {
     &::before {
       background: $color-primary-01-500;
       bottom: 0;
-      content: "";
+      content: '';
       display: block;
       left: 0;
       position: absolute;
@@ -150,13 +170,19 @@ export default {
     text-align: center;
 
     &-wrapper {
-      padding: $mu200;      
+      padding-top: $mu200;
+
+      @media (min-width: 992px) {
+        padding: $mu200;
+      }
     }
   }
 
   &__main,
   &__aside {
-    width: 50%;
+    @media (min-width: 992px) {
+      width: 50%;
+    }
   }
 
   &__recommandation {

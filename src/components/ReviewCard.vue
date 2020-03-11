@@ -9,14 +9,16 @@
             class="review-card__img"
           />
         </span>
-        <figcaption class="review-card__user-name">{{ review.user }}</figcaption>
+        <figcaption class="review-card__user-name">
+          {{ review.user }}
+        </figcaption>
       </figure>
       <p class="review-card__period">
         Achat réalisé il y a <strong>{{ review.period }}</strong>
       </p>
     </div>
     <div class="review-card__content">
-      <MStarsResult :score=review.score />
+      <MStarsResult :score="review.score" />
 
       <h2 class="review-card__title">{{ review.title }}</h2>
       <p class="review-card__date">Avis déposé le {{ review.date }}</p>
@@ -33,15 +35,15 @@
 </template>
 
 <script>
-import MButton from "@mozaic-ds/mozaic-vue/src/components/button/MButton";
-import MStarsResult from "@mozaic-ds/mozaic-vue/src/components/ratingstars/MStarsResult";
+import MButton from '@mozaic-ds/mozaic-vue/src/components/button/MButton';
+import MStarsResult from '@mozaic-ds/mozaic-vue/src/components/ratingstars/MStarsResult';
 
 export default {
-  name: "ReviewCard",
+  name: 'ReviewCard',
 
   components: {
     MButton,
-    MStarsResult
+    MStarsResult,
   },
 
   props: {
@@ -50,40 +52,55 @@ export default {
     },
   },
 
-  data () {
+  data() {
     return {
       id: null,
     };
   },
 
-  created () {
+  created() {
     this.id = this._uid;
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "settings-tools/_all-settings";
-@import "components/_c.links";
+@import 'settings-tools/_all-settings';
+@import 'components/_c.links';
 
 .review-card {
   background: $color-grey-000;
-  display: flex;
   padding: $mu250 0;
 
+  @media (max-width: 991px) {
+    padding-left: $mu200;
+    padding-right: $mu200;
+  }
+  @media (min-width: 992px) {
+    display: flex;
+  }
+
   &__user {
-    border-right: 1px solid $color-grey-200;
-    width: magic-unit-rem(11.625, true);
-    padding: 0 $mu100;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
+    @media (max-width: 991px) {
+      border-bottom: 1px solid $color-grey-200;
+      margin-bottom: $mu200;
+      padding-bottom: $mu100;
+    }
+    @media (min-width: 992px) {
+      border-right: 1px solid $color-grey-200;
+      padding: 0 $mu100;
+      width: magic-unit-rem(11.625, true);
+    }
+
     &-name {
       color: $color-font-primary-01;
       text-transform: uppercase;
-      font-weight: map-get($font-weights, "semi-bold");
+      font-weight: map-get($font-weights, 'semi-bold');
     }
   }
 
@@ -110,8 +127,11 @@ export default {
   }
 
   &__content {
-    padding: 0 $mu200;
     flex: 1 1 auto;
+
+    @media (min-width: 992px) {
+      padding: 0 $mu200;
+    }
   }
 
   &__title {
@@ -141,7 +161,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: $mu150	0 0;
+    padding: $mu150 0 0;
   }
 }
 </style>
