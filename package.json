@@ -10,7 +10,7 @@
   "dependencies": {
     "@mozaic-ds/mozaic-vue": "1.0.0-beta.22",
     "core-js": "^3.4.3",
-    "vue": "^2.6.10",
+    "vue": "^3.0.0",
     "vue-router": "^3.1.6",
     "vue-style-loader": "^4.1.2"
   },
